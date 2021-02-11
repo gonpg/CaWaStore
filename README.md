@@ -17,11 +17,11 @@ Los usuarios adscritos a la página podrán comprar productos de toda clase rela
 
 ## Las entidades de la aplicación son: 
 
-- Usuario.
-- Producto.
-- Catalogo.
-- Pedido.
-- Promoción.
+- Usuario: debe contener su nombre, correo electrónico, identificador, avatar, método de pago y dirección de envío.
+- Producto: debe contener identificador único, categoría de producto.
+- Catalogo: almacén de productos y contiene el stock de cada uno.
+- Pedido: productos elegidos por el cliente, coste de la operación y disponibilidad.
+- Promoción: descuentos aplicables a los productos.
 
 ## Funcionalidades internas:
 
@@ -31,6 +31,7 @@ Los usuarios adscritos a la página podrán comprar productos de toda clase rela
 
 - Envío de correo electrónico a los usuarios (cuando se crea una cuenta, para recuperar la contraseña, cuando se realiza una compra...)
 
+- Calculadora: calcula el total del pedido con gastos de envío.
 
 ## Componentes del grupo: 
 
