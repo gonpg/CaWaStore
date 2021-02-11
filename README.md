@@ -23,15 +23,13 @@ Los usuarios adscritos a la página podrán comprar productos de toda clase rela
 - Pedido: productos elegidos por el cliente, coste de la operación y disponibilidad.
 - Promoción: descuentos aplicables a los productos.
 
-## Funcionalidades internas:
+## Servicio interno:
 
-- Gestión de cesta (notificar al usuario cuando un artículo de la cesta no queda en stock o está rebajado
+- Servicio de pago online (simulación)
 
-- Servicio de pago online.
+- Envío de correo electrónico a los usuarios (cuando se crea una cuenta, para recuperar la contraseña, cuando se realiza una compra...) (Si da tiempo)
 
-- Envío de correo electrónico a los usuarios (cuando se crea una cuenta, para recuperar la contraseña, cuando se realiza una compra...)
-
-- Calculadora: calcula el total del pedido con gastos de envío.
+- Calculadora: calcula el total del pedido con gastos de envío, promociones...
 
 ## Componentes del grupo: 
 
