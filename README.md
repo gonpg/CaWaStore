@@ -25,7 +25,7 @@ Los usuarios adscritos a la página podrán comprar productos de toda clase rela
 
 ## Funcionalidades internas:
 
--Gestión de cesta (notificar al usuario cuando un artículo de la cesta no queda en stock o está rebajado
+- Gestión de cesta (notificar al usuario cuando un artículo de la cesta no queda en stock o está rebajado
 
 - Servicio de pago online.
 
