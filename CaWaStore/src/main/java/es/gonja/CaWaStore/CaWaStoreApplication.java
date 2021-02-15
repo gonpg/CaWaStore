@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class CaWaStoreApplication {
 
 	public static void main(String[] args) {
-		System.out.println("Hola");
+		System.out.println("Hola Mundoooooo");
 		SpringApplication.run(CaWaStoreApplication.class, args);
 	}
 
