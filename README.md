@@ -19,7 +19,7 @@ Los usuarios adscritos a la página podrán comprar productos de toda clase rela
 
 - Usuario: debe contener su nombre, correo electrónico, identificador, avatar, método de pago y dirección de envío.
 - Producto: debe contener identificador único, categoría de producto.
-- Catalogo: almacén de productos y contiene el stock de cada uno.
+- Reseña: los clientes registrados pueden realizar una reseña de producto.
 - Pedido: productos elegidos por el cliente, coste de la operación y disponibilidad.
 - Promoción: descuentos aplicables a los productos.
 
