@@ -31,14 +31,15 @@ Los usuarios adscritos a la página podrán comprar productos de toda clase rela
 
 - Calculadora: calcula el total del pedido con gastos de envío, promociones...
 
+## Modelo E/R:
+
+![](assets/modeloER.png)
+
 ## Componentes del grupo: 
 
 - Miguel Gonzalo Pérez González: mg.perez.2017@alumnos.urjc.es // https://github.com/gonpg
 
 - José Ángel Sánchez Pérez: ja.sanchezp.2017@alumnos.urjc.es // https://github.com/joseangelsanchezperez
 
-## Modelo E/R:
 
-
-https://raw.githubusercontent.com/joseangelsanchezperez/CaWaStore/main/assets/modeloER.png
 
