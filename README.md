@@ -40,5 +40,5 @@ Los usuarios adscritos a la página podrán comprar productos de toda clase rela
 ## Modelo E/R:
 
 
-https://raw.githubusercontent.com/joseangelsanchezperez/CaWaStore/main/assets/HTMLDISTRIB.pnj
+https://raw.githubusercontent.com/joseangelsanchezperez/CaWaStore/main/assets/modeloER.png
 
