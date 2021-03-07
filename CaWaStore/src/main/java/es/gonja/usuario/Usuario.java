@@ -99,15 +99,15 @@ public class Usuario implements Serializable {
         return pedidos;
     }
 
-    public void setOrders(List<Pedido> pedido) {
+    public void setPedidoss(List<Pedido> pedido) {
         this.pedidos = pedido;
     }
 
-    public void addOrder(Pedido pedido) {
+    public void AnadirPedido(Pedido pedido) {
         this.pedidos.add(pedido);
     }
 
-    public void removeOrder(Pedido pedido) {
+    public void EliminarPedido(Pedido pedido) {
         this.pedidos.remove(pedido);
     }
 
