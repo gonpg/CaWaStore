@@ -126,14 +126,4 @@ public class Usuario implements Serializable {
     public void eliminarResena(Resena resena) {
         this.resenas.remove(resena);
     }
-
-    public List<String> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(List<String> roles) {
-        this.roles = roles;
-    }
-
-
 }
