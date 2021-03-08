@@ -35,6 +35,10 @@ Los usuarios adscritos a la página podrán comprar productos de toda clase rela
 
 ![](assets/modeloER.png)
 
+## Diagrama de clases:
+
+![](assets/modeloER.png)
+
 ## Componentes del grupo: 
 
 - Miguel Gonzalo Pérez González: mg.perez.2017@alumnos.urjc.es // https://github.com/gonpg
