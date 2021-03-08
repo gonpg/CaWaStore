@@ -33,11 +33,11 @@ Los usuarios adscritos a la página podrán comprar productos de toda clase rela
 
 ## Modelo E/R:
 
-![](Documentos/modeloER.png)
+![](Documentos/modeloER.PNG)
 
 ## Diagrama de clases:
 
-![](Documentos/UML.png)
+![](Documentos/UML.PNG)
 
 ## Componentes del grupo: 
 
