@@ -63,11 +63,23 @@ public class DatabaseUsage implements CommandLineRunner {
         Producto p3 = new Producto("Chaleco de 5KG", "Mancuernas", 30.5F, 100,
                 "Chaleco lastrado con pesas de 5KG",
                 "https://contents.mediadecathlon.com/p1643571/k$3c00962c129eb3e87475fd6769961ebd/sq/Chaleco+lastrado+cross+training+musculaci+n+5+kg.jpg");
+        
+        Producto p4 = new Producto("Set de mancuernas", "Mancuernas", 40.0F, 50,
+                "Set de mancuernas roscadas de 20KG",
+                "https://contents.mediadecathlon.com/p1183101/k$28bf0f41482fecbf3eb6a50bb405059a/sq/Kit+mancuernas+musculaci+n+20+kg+de+rosca.jpg");
+        
+        Producto p5 = new Producto("Muñequera", "Material Crossfit", 5.0F, 5,
+                "Muñequeras capaces de mantener rigidez en la muñeca para ejercicios de pino o barra",
+                "https://contents.mediadecathlon.com/p1748366/k$2313dfd5c5758634ef14b43b1f2fa52b/sq/MU+EQUERAS+MUSCULACI+N+CROSSTRAINING+AZUL.jpg");
+        
+        
 
         
         productoRepository.save(p1);
         productoRepository.save(p2);
         productoRepository.save(p3);
+        productoRepository.save(p4);
+        productoRepository.save(p5);
        
 
 
@@ -76,11 +88,11 @@ public class DatabaseUsage implements CommandLineRunner {
 
         Resena r1 = new Resena(p1, u1, date, "Buen producto");
         Resena r2 = new Resena(p2, u2, date, "Buen producto");
-       
+        Resena r3 = new Resena(p1, u2, date, "Bueno, pero no mucho");
        
         resenaRepository.save(r1);
         resenaRepository.save(r2);
-        
+        resenaRepository.save(r3);
         
 
         List<Producto> l1 = new ArrayList<>();
