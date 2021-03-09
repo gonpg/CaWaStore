@@ -42,14 +42,14 @@ Los usuarios adscritos a la página podrán comprar productos de toda clase rela
 ##Capturas de pantalla de la web
 ![](Documentos/Tienda.png)
 ![](Documentos/Login.png)
-![](Documentos/Perfil usuario.png)
+![](Documentos/Perfilusuario.png)
 ![](Documentos/Registro.png)
-![](Documentos/Registro completo.png)
-![](Documentos/Añadir producto.png)
-![](Documentos/Detalles de producto.png)
-![](Documentos/Producto eliminado.png)
-![](Documentos/Realizar pedido.png)
-![](Documentos/Reseña añadida.png)
+![](Documentos/Registrocompleto.png)
+![](Documentos/Añadirproducto.png)
+![](Documentos/Detallesdeproducto.png)
+![](Documentos/Productoeliminado.png)
+![](Documentos/Realizarpedido.png)
+![](Documentos/Reseñaañadida.png)
 
 ## Componentes del grupo: 
 
