@@ -39,6 +39,18 @@ Los usuarios adscritos a la página podrán comprar productos de toda clase rela
 
 ![](Documentos/UML.PNG)
 
+## Capturas de pantalla de la web
+![](Documentos/Tienda.png)
+![](Documentos/Login.png)
+![](Documentos/Perfilusuario.png)
+![](Documentos/Registro.png)
+![](Documentos/Registrocompleto.png)
+![](Documentos/Añadirproducto.png)
+![](Documentos/Detallesdeproducto.png)
+![](Documentos/Productoeliminado.png)
+![](Documentos/Realizarpedido.png)
+![](Documentos/Reseñaañadida.png)
+
 ## Componentes del grupo: 
 
 - Miguel Gonzalo Pérez González: mg.perez.2017@alumnos.urjc.es // https://github.com/gonpg
