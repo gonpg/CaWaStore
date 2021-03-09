@@ -21,7 +21,7 @@ public class Producto {
     private float precio;
     private int stock;
     private String descripcion;
-    private String enlace_imagen;
+    private String url;
 
     @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Resena> resenas;
@@ -41,7 +41,7 @@ public class Producto {
         this.precio = precio;
         this.stock = stock;
         this.descripcion = descripcion;
-        this.enlace_imagen = enlace_imagen;
+        this.url = enlace_imagen;
     }
 
     public long getId() {
@@ -93,11 +93,11 @@ public class Producto {
     }
 
     public String getEnlace_imagen() {
-        return enlace_imagen;
+        return url;
     }
 
     public void setEnlace_imagen(String enlace_imagen) {
-        this.enlace_imagen = enlace_imagen;
+        this.url = enlace_imagen;
     }
 
     public List<Pedido> getPedidos() {

@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example;
 
 import com.example.pedido.Pedido;
 import com.example.pedido.PedidoRepository;
@@ -44,7 +44,7 @@ public class DatabaseUsage implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         Usuario u1 = new Usuario("joseAngel", "jose@hola.com", "12345678");
-        Usuario u2 = new Usuario("pepe28", "gonzalo@hola.com", "12345678");
+        Usuario u2 = new Usuario("gonzalo", "gonzalo@hola.com", "12345678");
        
 
         usuarioRepository.save(u1);
@@ -71,7 +71,7 @@ public class DatabaseUsage implements CommandLineRunner {
        
 
 
-        LocalDate localDate = java.time.LocalDate.now();
+     LocalDate localDate = java.time.LocalDate.now();
         Date date = java.sql.Date.valueOf(localDate);
 
         Resena r1 = new Resena(p1, u1, date, "Buen producto");
@@ -109,8 +109,8 @@ public class DatabaseUsage implements CommandLineRunner {
         pr1.setProducto(p3);
 
         promocionRepository.save(pr1);
-    }
+ 
+} 
 }
-
 
        

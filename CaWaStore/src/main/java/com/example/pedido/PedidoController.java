@@ -29,7 +29,7 @@ public class PedidoController {
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 	
-	@GetMapping("/nuevo_pedido")
+	@GetMapping("/nuevoPedido")
     public String showProductList(Model model) {
         List<Producto> product_list = productoRepository.findAll();
         model.addAttribute("productos", product_list);
@@ -45,7 +45,7 @@ public class PedidoController {
 
 		List<Producto> productos = new ArrayList<>();
 		for (String productName : productNames) {
-			Producto product = productoRepository.findByName(productName);
+			Producto product = productoRepository.findByNombre(productName);
 			productos.add(product);
 		}
 		

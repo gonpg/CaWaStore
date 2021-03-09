@@ -25,12 +25,12 @@ public class UsuarioController {
     }
 
     @PostMapping("/nuevoUsuario")
-    public String registrarse(Model model, @RequestParam String username,
-                              @RequestParam String password, @RequestParam String email) {
+    public String registrarse(Model model, @RequestParam String nombreUsuario,
+                              @RequestParam String email,@RequestParam String contrasenya) {
 
-        Usuario user = new Usuario(username, email, password);
-        usuarioRepository.save(user);
-        model.addAttribute("nombreUsuario", user.getNombreUsuario());
+        Usuario usuario = new Usuario(nombreUsuario, email, contrasenya);
+        usuarioRepository.save(usuario);
+        model.addAttribute("nombreUsuario", usuario.getNombreUsuario());
 
         return "registrado";
     }

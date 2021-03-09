@@ -6,10 +6,10 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface ProductoRepository extends JpaRepository<Producto, Long> {
-    Producto findByName(String nombre);
+    Producto findByNombre(String nombre);
 
-    @Query("SELECT p FROM Producto p WHERE lower(p.name) LIKE lower(concat('%', ?1,'%'))")
-    List<Producto> findByNameIsLike(String name);
+    @Query("SELECT p FROM Producto p WHERE lower(p.nombre) LIKE lower(concat('%', ?1,'%'))")
+    List<Producto> findByNombreIsLike(String nombre);
 
 }
 

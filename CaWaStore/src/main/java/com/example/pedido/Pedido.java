@@ -6,6 +6,8 @@ import com.example.producto.Producto;
 import com.example.usuario.Usuario;
 
 import javax.persistence.*;
+
+
 import java.util.Date;
 import java.util.List;
 
@@ -16,7 +18,7 @@ public class Pedido {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-  
+	
     private Date fecha;
 
     @ManyToOne

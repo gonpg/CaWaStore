@@ -24,7 +24,7 @@ public class ProductoController {
     private PromocionRepository promocionRepository;
 
     @GetMapping("/productos")
-    public String shop(Model model) {
+    public String tienda(Model model) {
         List<Producto> productos = productoRepository.findAll();
         productos.sort(Comparator.comparing(Producto::getNombre));
 
@@ -34,7 +34,7 @@ public class ProductoController {
     }
 
     @GetMapping("/productos/{id}")
-    public String viewProducto(Model model, @PathVariable long id) {
+    public String verProducto(Model model, @PathVariable long id) {
         Optional<Producto> producto = productoRepository.findById(id);
 
         model.addAttribute("producto", producto.get());
@@ -44,7 +44,7 @@ public class ProductoController {
 
     @PostMapping("/busqueda")
     public String findByName(Model model, @RequestParam String name) {
-        List<Producto> producto_list = productoRepository.findByNameIsLike(name);
+        List<Producto> producto_list = productoRepository.findByNombreIsLike(name);
         model.addAttribute("productos", producto_list);
         return "tienda";
     }
@@ -52,9 +52,9 @@ public class ProductoController {
     @PostMapping("/productos/nuevoProducto")
     public String createProducto(Model model, @RequestParam String nombre, @RequestParam float precio, @RequestParam int promocion,
                                 @RequestParam int stock, @RequestParam String categoria,
-                                @RequestParam String enlace_imagen, @RequestParam String descripcion) {
+                                @RequestParam String url, @RequestParam String descripcion) {
 
-        Producto newProducto = new Producto(nombre, categoria, precio, stock, descripcion, enlace_imagen);
+        Producto newProducto = new Producto(nombre, categoria, precio, stock, descripcion, url);
         productoRepository.save(newProducto);
 
         if (promocion > 0) {
