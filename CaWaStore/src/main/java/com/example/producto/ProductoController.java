@@ -43,8 +43,8 @@ public class ProductoController {
     }
 
     @PostMapping("/busqueda")
-    public String findByName(Model model, @RequestParam String name) {
-        List<Producto> producto_list = productoRepository.findByNombreIsLike(name);
+    public String findByNombre(Model model, @RequestParam String nombre) {
+        List<Producto> producto_list = productoRepository.findByNombreIsLike(nombre);
         model.addAttribute("productos", producto_list);
         return "tienda";
     }
