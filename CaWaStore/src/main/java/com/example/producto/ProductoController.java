@@ -52,7 +52,7 @@ public class ProductoController {
     @PostMapping("/productos/nuevoProducto")
     public String createProducto(Model model, @RequestParam String nombre, @RequestParam float precio, @RequestParam int promocion,
                                 @RequestParam int stock, @RequestParam String categoria,
-                                @RequestParam String url, @RequestParam String descripcion) {
+                                @RequestParam (defaultValue="https://www.acegal.org/wp-content/uploads/2017/08/sin-imagen12.jpg")String url, @RequestParam String descripcion) {
 
         Producto newProducto = new Producto(nombre, categoria, precio, stock, descripcion, url);
         productoRepository.save(newProducto);
