@@ -50,7 +50,7 @@ public class ProductoController {
     }
 
     @PostMapping("/productos/nuevoProducto")
-    public String createProducto(Model model, @RequestParam String nombre, @RequestParam float precio, @RequestParam int promocion,
+    public String createProducto(Model model, @RequestParam String nombre, @RequestParam float precio, @RequestParam (defaultValue= "0") int promocion,
                                 @RequestParam int stock, @RequestParam String categoria,
                                 @RequestParam (defaultValue="https://www.acegal.org/wp-content/uploads/2017/08/sin-imagen12.jpg")String url, @RequestParam String descripcion) {
 
