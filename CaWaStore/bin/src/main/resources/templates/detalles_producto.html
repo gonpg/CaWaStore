@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>{{producto.nombre}}</h2>
+
+<table style="width:100%">
+    <tr>
+        <td><img src="{{producto.url}}" style="max-width: 500px;"></td>
+
+        <td style="text-align:justify">
+            <br>Precio: {{producto.precio}}€
+            <br>Stock: {{producto.stock}} unidades
+            <br>Descripción: {{producto.descripcion}}
+            <br>{{#producto.promocion}}Oferta: {{producto.promocion.promocion}}% descuento{{/producto.promocion}}
+        </td>
+    </tr>
+</table>
+<br>
+<br>
+
+<table style="width:15%">
+    <tr>
+        <td>
+            <form action="/realizado" method="post">
+                <input type="hidden" name="product_list" value="{{producto.nombre}}">
+                <input type="submit" value="Comprar ahora">
+            </form>
+        </td>
+
+        <td>
+            <button type="button" onclick="location.href='/eliminar/{{producto.id}}'">Eliminar Producto</button>
+        </td>
+    </tr>
+</table>
+
+
+<br>
+<br>
+
+<h3>Reseñas</h3>
+{{#producto.resenas}}
+<h5>{{usuario.nombreUsuario}}</h5>
+<p>&nbsp;{{texto}}</p>
+<br>
+{{/producto.resenas}}
+<br>
+<br>
+<h3>Escribir reseña sobre este producto</h3>
+<form action="/productos/{{producto.id}}/nuevaResena" method="post">
+    <textarea minlength=10 name='reviewText' rows=5 cols=40></textarea>
+    <br>
+    <br>
+    <input type='submit' value='Enviar'>
+</form>
+
+<br>
+<br>
+<a href="/productos">Ir a productos</a>
+
+</body>
+</html>

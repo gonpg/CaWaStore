@@ -22,6 +22,11 @@ public class ProductoController {
 
     @Autowired
     private PromocionRepository promocionRepository;
+    
+    @GetMapping("/")
+    public String redirectRoot() {
+        return "redirect:/productos";
+    }
 
     @GetMapping("/productos")
     public String tienda(Model model) {

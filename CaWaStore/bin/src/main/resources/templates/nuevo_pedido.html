@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>Realizar Pedido</h2>
+
+ <form action="/realizado" method="post">
+  <label for="productos">Selecciona productos:</label>
+
+	<select id="productos" multiple name="product_list">
+	  {{#productos}}
+	  	 <option value="{{nombre}}">{{nombre}}</option>	
+	  {{/productos}}
+	</select>
+  
+  <input type="submit" value="Comprar">
+</form>
+</body>
+</html>
