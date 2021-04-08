@@ -25,11 +25,9 @@ Los usuarios adscritos a la página podrán comprar productos de toda clase rela
 
 ## Servicio interno:
 
-- Servicio de pago online (simulación)
+- Envío de correo electrónico a los usuarios cuando se realiza una compra.
 
-- Envío de correo electrónico a los usuarios (cuando se crea una cuenta, para recuperar la contraseña, cuando se realiza una compra...) (Si da tiempo)
-
-- Calculadora: calcula el total del pedido con gastos de envío, promociones...
+- Generación de pdf con el cálculo total del pedido con las promociones aplicadas. 
 
 ## Modelo E/R:
 
