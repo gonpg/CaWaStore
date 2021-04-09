@@ -43,13 +43,16 @@ public class DatabaseUsage implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        Usuario u1 = new Usuario("joseAngel", "jose@hola.com", "12345678");
-        Usuario u2 = new Usuario("gonzalo", "gonzalo@hola.com", "12345678");
+   /*    Usuario u1 = new Usuario("joseAngel", "jose@hola.com", "12345678" , "USER");
+        Usuario u2 = new Usuario("gonzalo", "gonzalo@hola.com", "12345678", "USER");
+        Usuario u3 = new Usuario("paco", "paco@hola.com", "12345678", "USER");
+        Usuario administrador = new Usuario("Admin", "admin", "admin@hola.com", "1234", "USER", "ADMIN");
        
 
         usuarioRepository.save(u1);
         usuarioRepository.save(u2);
-       
+        usuarioRepository.save(u3);
+        usuarioRepository.save(administrador);
 
 
         Producto p1 = new Producto("Barras paralelas", "Crossfit", 40.5F, 5,
@@ -121,8 +124,10 @@ public class DatabaseUsage implements CommandLineRunner {
         pr1.setProducto(p3);
 
         promocionRepository.save(pr1);
- 
+
+ */
 } 
+
 }
 
        

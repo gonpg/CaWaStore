@@ -3,14 +3,24 @@ package com.example.usuario;
 import com.example.pedido.Pedido;
 import com.example.resena.Resena;
 
+import org.hibernate.annotations.ColumnDefault;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+
 import javax.persistence.*;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Entity
 public class Usuario {
 	
-	//List<String> roles = new ArrayList<>();
+	  @ElementCollection(fetch = FetchType.EAGER)
+	     private List<String> roles;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -21,7 +31,7 @@ public class Usuario {
     @Column(unique = true)
     private String email;
 
-
+    
     private String contrasenya;
 
     @Column(unique = true)
@@ -36,11 +46,12 @@ public class Usuario {
     protected Usuario() {
     }
 
-    public Usuario(String nombreUsuario, String email, String contrasenya) {
+    public Usuario(String nombreUsuario, String email, String contrasenya, String... roles) {
         this.nombreUsuario = nombreUsuario;
         this.email = email;
-        this.contrasenya = contrasenya;
-      //roles.add("USER");
+        this.contrasenya = new BCryptPasswordEncoder().encode(contrasenya);
+        System.out.println(this.contrasenya);
+        this.roles = new ArrayList<>(Arrays.asList(roles));
     }
 
     public long getId() {
@@ -116,12 +127,14 @@ public class Usuario {
         this.resenas.remove(resena);
     }
 
+
+
+public List<String> getRol() {
+	return roles;
 }
 
-//public List<String> getRoles() {
-//	return roles;
-//}
-//
-//public void setRoles(List<String> roles) {
-//	this.roles = roles;
-//}
+public void setRol(List<String> roles) {
+	this.roles = roles;
+}
+
+}
