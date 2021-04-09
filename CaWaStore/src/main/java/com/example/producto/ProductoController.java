@@ -25,7 +25,7 @@ public class ProductoController {
     
     @GetMapping("/")
     public String redirectRoot() {
-        return "redirect:/productos";
+    	return "forward:/productos";
     }
 
     @GetMapping("/productos")
@@ -79,5 +79,8 @@ public class ProductoController {
         model.addAttribute("id", id);
         return "producto_eliminado";
     }
-
+    @GetMapping("/subir_producto")
+    public String createProductView() {
+        return "subir_producto";
+    }
 }

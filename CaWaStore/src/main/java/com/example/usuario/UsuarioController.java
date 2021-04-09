@@ -23,7 +23,13 @@ public class UsuarioController {
         model.addAttribute("usuario", user);
         return "perfil_usuario";
     }
+    
 
+    @GetMapping("/signup")
+    public String registerView() {
+        return "signup";
+    }
+    
     @PostMapping("/nuevoUsuario")
     public String registrarse(Model model, @RequestParam String nombreUsuario,
                               @RequestParam String email,@RequestParam String contrasenya) {

@@ -4,12 +4,13 @@ import com.example.pedido.Pedido;
 import com.example.resena.Resena;
 
 import javax.persistence.*;
-
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 public class Usuario {
-
+	
+	//List<String> roles = new ArrayList<>();
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -39,6 +40,7 @@ public class Usuario {
         this.nombreUsuario = nombreUsuario;
         this.email = email;
         this.contrasenya = contrasenya;
+      //roles.add("USER");
     }
 
     public long getId() {
@@ -115,3 +117,11 @@ public class Usuario {
     }
 
 }
+
+//public List<String> getRoles() {
+//	return roles;
+//}
+//
+//public void setRoles(List<String> roles) {
+//	this.roles = roles;
+//}
