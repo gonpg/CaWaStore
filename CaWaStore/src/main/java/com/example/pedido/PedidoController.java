@@ -36,7 +36,7 @@ public class PedidoController {
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 	
-	@GetMapping("/nuevoPedido")
+	@GetMapping("/nuevo_pedido")
     public String showProductList(Model model) {
         List<Producto> product_list = productoRepository.findAll();
         model.addAttribute("productos", product_list);
