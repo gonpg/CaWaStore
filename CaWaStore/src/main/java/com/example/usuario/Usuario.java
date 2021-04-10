@@ -50,7 +50,6 @@ public class Usuario {
         this.nombreUsuario = nombreUsuario;
         this.email = email;
         this.contrasenya = new BCryptPasswordEncoder().encode(contrasenya);
-        //System.out.println(this.contrasenya);
         this.roles = new ArrayList<>(Arrays.asList(roles));
     }
 

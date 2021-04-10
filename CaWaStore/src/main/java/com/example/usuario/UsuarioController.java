@@ -1,14 +1,13 @@
 package com.example.usuario;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.client.RestTemplate;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -38,10 +37,13 @@ public class UsuarioController {
     public String registrarse(Model model, @RequestParam String nombreUsuario,
                               @RequestParam String email,@RequestParam String contrasenya) {
 
-        Usuario usuario = new Usuario(nombreUsuario, email, contrasenya);
-        usuarioRepository.save(usuario);
-        model.addAttribute("nombreUsuario", usuario.getNombreUsuario());
+        Usuario user = usuarioRepository.save(new Usuario(nombreUsuario, email, contrasenya, "USER"));
 
+        model.addAttribute("nombreUsuario", user.getNombreUsuario());
+
+        RestTemplate restTemplate = new RestTemplate();
+        restTemplate.exchange("http://localhost:9999/mail/" + user.getId(), HttpMethod.GET, null, Void.class);	
+        
         return "registrado";
     }
 }
