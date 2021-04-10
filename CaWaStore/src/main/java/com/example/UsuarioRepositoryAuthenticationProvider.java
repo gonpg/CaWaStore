@@ -2,6 +2,7 @@ package com.example;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import com.example.usuario.Usuario;
 import com.example.usuario.UsuarioRepository;
@@ -26,28 +27,26 @@ public class UsuarioRepositoryAuthenticationProvider implements AuthenticationPr
 
     @Override
     public Authentication authenticate(Authentication auth) throws AuthenticationException {
+    	 Optional<Usuario> user = usuarioRepository.findByNombreUsuario(auth.getName());
+          	 
 
-        Usuario user = usuarioRepository.findByNombreUsuario(auth.getName());
-
-        if (user == null) {
+    	 if (!user.isPresent()) {
             throw new BadCredentialsException("Credenciales incorrectas");
         }
 
         String contrasenya = (String) auth.getCredentials();
-        System.out.println(user.getContrasenya());
-        System.out.println(contrasenya);
-        if (!new BCryptPasswordEncoder().matches(contrasenya, user.getContrasenya())) {
+        if (!new BCryptPasswordEncoder().matches(contrasenya, user.get().getContrasenya())) {
             throw new BadCredentialsException("Credenciales incorrectas");
         }
  
 
 
         List<GrantedAuthority> roles = new ArrayList<>();
-        for (String rol : user.getRol()) {
+        for (String rol : user.get().getRol()) {
             roles.add(new SimpleGrantedAuthority("ROL_" + rol));
         }
 
-        return new UsernamePasswordAuthenticationToken(user.getNombreUsuario(), contrasenya, roles);
+        return new UsernamePasswordAuthenticationToken(user.get().getNombreUsuario(), contrasenya, roles);
     }
 
     @Override

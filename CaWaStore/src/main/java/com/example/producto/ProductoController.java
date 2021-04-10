@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
@@ -29,19 +30,22 @@ public class ProductoController {
     }
 
     @GetMapping("/productos")
-    public String tienda(Model model) {
+    public String tienda (Model model, HttpServletRequest request) {
         List<Producto> productos = productoRepository.findAll();
         productos.sort(Comparator.comparing(Producto::getNombre));
 
         model.addAttribute("productos", productos);
-
+        model.addAttribute("admin", request.isUserInRole("ADMIN"));
+        model.addAttribute("logged", request.getUserPrincipal() == null);
         return "tienda";
     }
 
     @GetMapping("/productos/{id}")
-    public String verProducto(Model model, @PathVariable long id) {
+    public String verProducto(Model model, @PathVariable long id,  HttpServletRequest request) {
         Optional<Producto> producto = productoRepository.findById(id);
 
+        model.addAttribute("admin", request.isUserInRole("ADMIN"));
+        model.addAttribute("logged", request.getUserPrincipal() != null);
         model.addAttribute("producto", producto.get());
 
         return "detalles_producto";

@@ -15,8 +15,13 @@
 {{#productos}}
 <p>{{nombre}}</p>
 {{/productos}}
+<br>
+<a href="/factura/{{id}}">
+    <button>Generar factura</button>
+</a>
 {{/usuario.pedidos}}
-
+<br>
+<br>
 <br>
 <br>
 <a href="/productos">
@@ -24,7 +29,7 @@
 </a>
 <br>
 <br>
-<a href="/productos">
+<a href="/logout">
     <button>Cerrar sesión</button>
 </a>
 
