@@ -13,6 +13,7 @@ import com.example.usuario.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Controller;
+import org.springframework.dao.DataIntegrityViolationException;
 
 import java.sql.Date;
 import java.time.LocalDate;
@@ -42,8 +43,8 @@ public class DatabaseUsage implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-
-   /*    Usuario u1 = new Usuario("joseAngel", "jose@hola.com", "12345678" , "USER");
+    	try {
+    	Usuario u1 = new Usuario("joseAngel", "jose@hola.com", "12345678" , "USER");
         Usuario u2 = new Usuario("gonzalo", "gonzalo@hola.com", "12345678", "USER");
         Usuario u3 = new Usuario("paco", "paco@hola.com", "12345678", "USER");
         Usuario administrador = new Usuario("Admin", "admin", "admin@hola.com", "1234", "USER", "ADMIN");
@@ -124,9 +125,11 @@ public class DatabaseUsage implements CommandLineRunner {
         pr1.setProducto(p3);
 
         promocionRepository.save(pr1);
+        
+    	} catch (DataIntegrityViolationException ex) {}
 
- */
-} 
+    }
+
 
 }
 

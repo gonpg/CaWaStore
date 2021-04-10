@@ -58,7 +58,11 @@ public class PedidoController {
 		Pedido pedido = new Pedido(user, fecha, productos);
 		pedidoRepository.save(pedido);
 
-		 RedirectView redirectView = new RedirectView("profile");
+		 RestTemplate restTemplate = new RestTemplate();
+		 restTemplate.exchange("http://localhost:9999/realizado/" + pedido.getId(), HttpMethod.GET, null, Void.class);
+
+		
+		 RedirectView redirectView = new RedirectView("perfil");
 	        redirectView.setExposeModelAttributes(false);
 	        return redirectView;
     }

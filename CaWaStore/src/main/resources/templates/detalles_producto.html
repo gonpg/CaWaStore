@@ -25,6 +25,7 @@
             <form action="/realizado" method="post">
                 <input type="hidden" name="product_list" value="{{producto.nombre}}">
                 <input type="submit" value="Comprar ahora">
+                <input type="hidden" name="_csrf" value="{{token}}"/>
             </form>
         </td>
 	{{#admin}}
