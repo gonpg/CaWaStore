@@ -11,7 +11,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@SuppressWarnings("deprecation")
+
 @Configuration
 public class CSRFHandlerConfiguration implements WebMvcConfigurer {
 
@@ -21,7 +21,7 @@ public class CSRFHandlerConfiguration implements WebMvcConfigurer {
     }
 }
 
-@SuppressWarnings("deprecation")
+
 class CSRFHandlerInterceptor extends HandlerInterceptorAdapter {
 
     @Override

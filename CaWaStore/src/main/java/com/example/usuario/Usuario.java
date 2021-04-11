@@ -128,11 +128,11 @@ public class Usuario {
 
 
 
-public List<String> getRol() {
+public List<String> getRoles() {
 	return roles;
 }
 
-public void setRol(List<String> roles) {
+public void setRoles(List<String> roles) {
 	this.roles = roles;
 }
 

@@ -36,14 +36,14 @@ public class UsuarioRepositoryAuthenticationProvider implements AuthenticationPr
 
         String contrasenya = (String) auth.getCredentials();
         if (!new BCryptPasswordEncoder().matches(contrasenya, user.get().getContrasenya())) {
-            throw new BadCredentialsException("Credenciales incorrectas");
+            throw new BadCredentialsException("Contraseña incorrecta");
         }
  
 
 
         List<GrantedAuthority> roles = new ArrayList<>();
-        for (String rol : user.get().getRol()) {
-            roles.add(new SimpleGrantedAuthority("ROL_" + rol));
+        for (String role : user.get().getRoles()) {
+            roles.add(new SimpleGrantedAuthority("ROLE_" + role));
         }
 
         return new UsernamePasswordAuthenticationToken(user.get().getNombreUsuario(), contrasenya, roles);

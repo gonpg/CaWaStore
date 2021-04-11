@@ -42,12 +42,12 @@ public class DatabaseUsage implements CommandLineRunner {
    
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args){
     	try {
     	Usuario u1 = new Usuario("joseAngel", "jose@hola.com", "12345678" , "USER");
         Usuario u2 = new Usuario("gonzalo", "gonzalo@hola.com", "12345678", "USER");
         Usuario u3 = new Usuario("paco", "paco@hola.com", "12345678", "USER");
-        Usuario administrador = new Usuario("Admin", "admin", "admin@hola.com", "1234", "USER", "ADMIN");
+        Usuario administrador = new Usuario("admin", "admin@hola.com", "1234", "USER", "ADMIN");
        
 
         usuarioRepository.save(u1);
