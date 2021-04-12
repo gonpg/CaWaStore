@@ -41,10 +41,10 @@ Los usuarios adscritos a la página podrán comprar productos de toda clase rela
 
 ![](Documentos/DDCT.PNG)
 
-Rosa- Clases
-Morado- Repositorios
-Verde- Controladores
-Azul- Templates
+Rosa- Clases//
+Morado- Repositorios//
+Verde- Controladores//
+Azul- Templates.
 
 ## Capturas de pantalla de la web
 ![](Documentos/Tienda.png)
