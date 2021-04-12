@@ -37,6 +37,10 @@ Los usuarios adscritos a la página podrán comprar productos de toda clase rela
 
 ![](Documentos/UML.PNG)
 
+## Diagrama de clases y templates:
+
+![](Documentos/diagrama de clases.PNG)
+
 ## Capturas de pantalla de la web
 ![](Documentos/Tienda.png)
 ![](Documentos/Login.png)
