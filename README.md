@@ -39,7 +39,7 @@ Los usuarios adscritos a la página podrán comprar productos de toda clase rela
 
 ## Diagrama de clases y templates:
 
-![](Documentos/diagrama de clases.PNG)
+![](Documentos/DDC.PNG)
 
 ## Capturas de pantalla de la web
 ![](Documentos/Tienda.png)
@@ -54,7 +54,7 @@ Los usuarios adscritos a la página podrán comprar productos de toda clase rela
 ![](Documentos/Reseñaañadida.png)
 
 ## Diagrama de navegación:
-![](Documentos/navegacion.PNG)
+![](Documentos/navegación.PNG)
 
 ## Componentes del grupo: 
 
