@@ -23,7 +23,7 @@ Los usuarios adscritos a la página podrán comprar productos de toda clase rela
 - Pedido: productos elegidos por el cliente, coste de la operación y disponibilidad.
 - Promoción: descuentos aplicables a los productos.
 
-## Servicio interno:
+## [Servicio interno](https://github.com/gonpg/CaWaStore-Rest)
 
 - Envío de correo electrónico a los usuarios cuando se realiza una compra.
 
@@ -39,7 +39,7 @@ Los usuarios adscritos a la página podrán comprar productos de toda clase rela
 
 ## Diagrama de clases y templates:
 
-![](Documentos/DDC.PNG)
+![](Documentos/DDCT.PNG)
 
 ## Capturas de pantalla de la web
 ![](Documentos/Tienda.png)
