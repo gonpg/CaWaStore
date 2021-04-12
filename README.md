@@ -61,6 +61,44 @@ Azul- Templates.
 ## Diagrama de navegación:
 ![](Documentos/navegación.PNG)
 
+## Despliegue de la máquina virtual:
+
+1. Compilación
+
+```
+$ mvn package
+```
+
+Para omitir los tests:  
+```
+$ mvn clean package -DskipTests
+```
+
+2. Distribución
+```
+$ scp CaWaStore-0.0.1-SNAPSHOT.jar <user>@<host>:
+$ scp CaWaStore-Rest-0.0.1-SNAPSHOT.jar <user>@<host>:
+$ scp CaWaStore.service <user>@<host>:
+$ scp CaWaStore-rest.service <user>@<host>:
+```
+
+3. Despliegue
+```
+$ sudo apt install openjdk-8-jdk-headless
+$ sudo apt install mysql-server
+$ sudo mysql_secure_installation
+$ mysqld --initialize (En caso de que no cree el directorio)
+$ sudo mysql
+$ mysql> create database CaWaStore;
+$ mysql> CREATE USER 'root'@'localhost' IDENTIFIED BY 'administrador';
+$ mysql> GRANT ALL ON CaWaStore.* to 'admin'@'localhost';
+$ sudo cp CaWaStore.service /etc/systemd/system/
+$ sudo cp CaWaStore-Rest.service /etc/systemd/system/
+$ sudo systemctl enable --now CaWaStore.service
+$ sudo systemctl enable --now CaWaStore-Rest.service
+```
+------X------X-------
+
 ## Componentes del grupo: 
 
 - Miguel Gonzalo Pérez González: mg.perez.2017@alumnos.urjc.es // https://github.com/gonpg
