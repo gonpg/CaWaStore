@@ -10,6 +10,7 @@ public class CaWaStoreApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CaWaStoreApplication.class, args);
+		System.out.println("prueba");
 	}
 
 }
