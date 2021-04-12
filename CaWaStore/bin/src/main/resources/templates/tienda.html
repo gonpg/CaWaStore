@@ -6,29 +6,35 @@
 
 <table style="width:40%">
     <tr>
+     {{#logged}}
         <td style="text-align:justify">
-            <a href="/login.html">Login</a>
+            <a href="/login">Login</a>
         </td>
 
         <td style="text-align:justify">
-            <a href="/signup.html">Registrarse</a>
-        </td>
+        
 
+
+           <a href="/signup">Registrarse</a>
+
+        </td>
+	{{/logged}}
         <td style="text-align:justify">
             <a href="/perfil">Perfil</a>
         </td>
-
+	{{#admin}}
         <td style="text-align:justify">
-            <a href="/subir_producto.html">Nuevo producto</a>
+            <a href="/subir_producto">Nuevo producto</a>
         </td>
-        
+    {{/admin}}
         <td style="text-align:justify">
-            <a href="/nuevoPedido">Realizar un pedido</a>
+            <a href="/nuevo_pedido">Realizar un pedido</a>
         </td>
         
        <td>
         	<form action="/busqueda" method="POST">
         		<input type="search" name="nombre" placeholder="Buscar" minlength="2">
+        		<input type="hidden" name="_csrf" value="{{token}}"/>
         		<input type="submit" name="submit" value="buscar">
         	</form>
         </td>
