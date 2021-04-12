@@ -1,0 +1,9 @@
+[Unit]
+ Description=CaWaStore REST
+
+ [Service]
+ ExecStart=/usr/bin/java -jar /home/CaWaStore/CaWaStore-0.0.1-SNAPSHOT.jar
+ User=CaWaStore
+
+ [Install]
+ WantedBy=multi-user.target
