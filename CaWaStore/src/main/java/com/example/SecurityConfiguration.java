@@ -41,7 +41,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers("/eliminar/*").hasRole("ADMIN");
         http.authorizeRequests().antMatchers("/productos/{id}/nuevaResena").hasAnyRole("USER", "ADMIN");
         http.authorizeRequests().antMatchers("/realizado").hasAnyRole("USER", "ADMIN");
-
+        
         // Login
         http.formLogin().defaultSuccessUrl("/productos");
         // Logout

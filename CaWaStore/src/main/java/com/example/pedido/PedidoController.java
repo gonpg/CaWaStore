@@ -59,7 +59,7 @@ public class PedidoController {
 		pedidoRepository.save(pedido);
 
 		 RestTemplate restTemplate = new RestTemplate();
-		 restTemplate.exchange("http://localhost:9999/realizado/" + pedido.getId(), HttpMethod.GET, null, Void.class);
+		 restTemplate.exchange("http://localhost:8080/realizado/" + pedido.getId(), HttpMethod.GET, null, Void.class);
 
 		
 		 RedirectView redirectView = new RedirectView("perfil");
@@ -71,7 +71,7 @@ public class PedidoController {
     public ResponseEntity<?> invoice(@PathVariable long id, HttpServletRequest request) {
         Optional<Pedido> pedido = pedidoRepository.findById(id);
 
-        if (!request.getUserPrincipal().getName().equalsIgnoreCase(pedido.get().getUsuario().getNombreUsuario())) {
+       if (!request.getUserPrincipal().getName().equalsIgnoreCase(pedido.get().getUsuario().getNombreUsuario())) {
             return new ResponseEntity<>("Forbidden", HttpStatus.FORBIDDEN);
         }
 
@@ -80,7 +80,7 @@ public class PedidoController {
         headers.setAccept(Collections.singletonList(MediaType.APPLICATION_OCTET_STREAM));
         HttpEntity<String> entity = new HttpEntity<>(headers);
 
-        return restTemplate.exchange("http://localhost:9999/generarFactura/" + id, HttpMethod.GET, entity, byte[].class);
+        return restTemplate.exchange("http://localhost:8080/generarFactura/" + id, HttpMethod.GET, entity, byte[].class);
     }
 	
 }

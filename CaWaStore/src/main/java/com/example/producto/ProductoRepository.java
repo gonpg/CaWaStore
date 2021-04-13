@@ -9,7 +9,7 @@ public interface ProductoRepository extends JpaRepository<Producto, Long> {
     Producto findByNombre(String nombre);
 
     @Query("SELECT p FROM Producto p WHERE lower(p.nombre) LIKE lower(concat('%', ?1,'%'))")
-    List<Producto> findByNombreIsLike(String nombre);
+    List<Producto> findByNombreIsLike(String productName);
 
 }
 

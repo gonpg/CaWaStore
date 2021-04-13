@@ -106,7 +106,7 @@ public class Usuario {
         this.pedidos.add(pedido);
     }
 
-    public void eliminarPeido(Pedido pedido) {
+    public void eliminarPedido(Pedido pedido) {
         this.pedidos.remove(pedido);
     }
 
