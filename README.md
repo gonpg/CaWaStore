@@ -48,31 +48,40 @@ Azul- Templates.
 
 ## Capturas de pantalla de la web
 ![](Documentos/Tienda.png)
+
 Tienda
 
 ![](Documentos/Login.png)
+
 Login
 
 ![](Documentos/Perfilusuario.png)
+
 Perfil del usuario
 
 ![](Documentos/Registro.png)
 ![](Documentos/Registrocompleto.png)
+
 Registro
 
 ![](Documentos/Añadirproducto.png)
+
 Crear producto
 
 ![](Documentos/Detallesdeproducto.png)
+
 Detalle de producto
 
 ![](Documentos/Productoeliminado.png)
+
 Producto eliminado
 
 ![](Documentos/Realizarpedido.png)
+
 Realizar pedio
 
 ![](Documentos/Reseñaañadida.png)
+
 Reseña
 
 ## Diagrama de navegación:
