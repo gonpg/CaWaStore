@@ -25,9 +25,9 @@ Los usuarios adscritos a la página podrán comprar productos de toda clase rela
 
 ## [Servicio interno](https://github.com/gonpg/CaWaStore-Rest)
 
-- Envío de correo electrónico a los usuarios cuando se realiza una compra.
+- Envío de correo electrónico a los usuarios cuando se realiza una compra y se registra un nuevo usuario.
 
-- Generación de pdf con el cálculo total del pedido con las promociones aplicadas. 
+- Generación de pdf con la factura del pedido. 
 
 ## Modelo E/R:
 
@@ -48,15 +48,24 @@ Azul- Templates.
 
 ## Capturas de pantalla de la web
 ![](Documentos/Tienda.png)
+Tienda
 ![](Documentos/Login.png)
+Login
 ![](Documentos/Perfilusuario.png)
+Perfil del usuario
 ![](Documentos/Registro.png)
 ![](Documentos/Registrocompleto.png)
+Registro
 ![](Documentos/Añadirproducto.png)
+Crear producto
 ![](Documentos/Detallesdeproducto.png)
+Detalle de producto
 ![](Documentos/Productoeliminado.png)
+Producto eliminado
 ![](Documentos/Realizarpedido.png)
+Realizar pedio
 ![](Documentos/Reseñaañadida.png)
+Reseña
 
 ## Diagrama de navegación:
 ![](Documentos/navegación.PNG)
