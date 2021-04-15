@@ -101,7 +101,7 @@ $ mvn clean package -DskipTests
 ```
 
 
-3. Despliegue
+2. Despliegue
 ```
 $ sudo apt install openjdk-8-jdk-headless
 $ sudo apt install mysql-server
