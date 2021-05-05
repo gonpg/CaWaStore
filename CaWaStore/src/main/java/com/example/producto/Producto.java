@@ -1,6 +1,6 @@
 package com.example.producto;
 
-
+import java.io.Serializable;
 import com.example.pedido.Pedido;
 import com.example.promocion.Promocion;
 import com.example.resena.Resena;
@@ -10,7 +10,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class Producto {
+public class Producto implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,7 +23,7 @@ public class Producto {
     private String descripcion;
     private String url;
 
-    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Resena> resenas;
 
     @ManyToMany(mappedBy = "productos", cascade = CascadeType.ALL)

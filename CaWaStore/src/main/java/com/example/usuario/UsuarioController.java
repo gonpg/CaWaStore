@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
 import javax.servlet.http.HttpServletRequest;
-
+import java.io.Serializable;
 @Controller
-public class UsuarioController {
+public class UsuarioController implements Serializable {
 
     @Autowired
     private UsuarioRepository usuarioRepository;

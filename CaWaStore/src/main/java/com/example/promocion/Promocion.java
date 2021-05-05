@@ -1,11 +1,11 @@
 package com.example.promocion;
 
 import com.example.producto.Producto;
-
+import java.io.Serializable;
 import javax.persistence.*;
 
 @Entity
-public class Promocion {
+public class Promocion implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

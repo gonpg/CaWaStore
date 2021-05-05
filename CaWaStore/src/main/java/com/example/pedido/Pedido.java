@@ -1,7 +1,7 @@
 package com.example.pedido;
 
 
-
+import java.io.Serializable;
 import com.example.producto.Producto;
 import com.example.usuario.Usuario;
 
@@ -13,7 +13,7 @@ import java.util.List;
 
 @Entity
 @Table(name="pedidos") 
-public class Pedido {
+public class Pedido implements Serializable {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;

@@ -5,9 +5,9 @@ import com.example.usuario.Usuario;
 
 import javax.persistence.*;
 import java.util.Date;
-
+import java.io.Serializable;
 @Entity
-public class Resena {
+public class Resena implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

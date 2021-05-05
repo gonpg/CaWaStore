@@ -3,20 +3,15 @@ package com.example.usuario;
 import com.example.pedido.Pedido;
 import com.example.resena.Resena;
 
-import org.hibernate.annotations.ColumnDefault;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
-
-
 import javax.persistence.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
+import java.io.Serializable;
 @Entity
-public class Usuario {
+public class Usuario implements Serializable {
 	
 	  @ElementCollection(fetch = FetchType.EAGER)
 	     private List<String> roles;

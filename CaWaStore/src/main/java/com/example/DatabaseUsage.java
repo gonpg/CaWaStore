@@ -44,10 +44,10 @@ public class DatabaseUsage implements CommandLineRunner {
     @Override
     public void run(String... args){
     	try {
-    	Usuario u1 = new Usuario("joseAngel", "jose@hola.com", "12345678" , "USER");
-        Usuario u2 = new Usuario("gonzalo", "gonzalo@hola.com", "12345678", "USER");
-        Usuario u3 = new Usuario("paco", "paco@hola.com", "12345678", "USER");
-        Usuario administrador = new Usuario("admin", "admin@hola.com", "1234", "USER", "ADMIN");
+    	Usuario u1 = new Usuario("joseAngel", "gonzalo.perez.1f@gmail.com", "12345678" , "USER");
+        Usuario u2 = new Usuario("gonzalo", "gonzalo.perez.1f@gmail.com", "12345678", "USER");
+        Usuario u3 = new Usuario("paco", "gonzalo.perez.1f@gmail.com", "12345678", "USER");
+        Usuario administrador = new Usuario("admin", "gonzalo.perez.1f@gmail.com", "1234", "USER", "ADMIN");
        
 
         usuarioRepository.save(u1);
@@ -56,27 +56,45 @@ public class DatabaseUsage implements CommandLineRunner {
         usuarioRepository.save(administrador);
 
 
-        Producto p1 = new Producto("Barras paralelas", "Crossfit", 40.5F, 5,
+        Producto p1 = new Producto("BARRAS PARALELAS", "Crossfit", 40.5F, 5,
                 "Barras paralelas",
                 "https://contents.mediadecathlon.com/p1103588/k$5cc7c279f32cbbd44a5abc4ab065cd54/sq/Barras+paralelas+para+dips+cross+training+musculaci+n+training+station+100.jpg");
 
-        Producto p2 = new Producto("Balón medicinal 3KG", "Mancuernas", 10.65F, 3,
+        Producto p2 = new Producto("BALON MEDICINAL 3KG", "Mancuernas", 10.65F, 3,
                 "Balon medicinal 3KG",
                 "https://contents.mediadecathlon.com/p1175605/k$26172214da5a9910dd5ab780e42ed8a0/sq/BAL+N+MEDICINAL+3+kg+Di+metro+22+cm+AMARILLO.jpg");
 
-        Producto p3 = new Producto("Chaleco de 5KG", "Mancuernas", 30.5F, 100,
+        Producto p3 = new Producto("CHALECO DE 5KG", "Mancuernas", 30.5F, 100,
                 "Chaleco lastrado con pesas de 5KG",
                 "https://contents.mediadecathlon.com/p1643571/k$3c00962c129eb3e87475fd6769961ebd/sq/Chaleco+lastrado+cross+training+musculaci+n+5+kg.jpg");
         
-        Producto p4 = new Producto("Set de mancuernas", "Mancuernas", 40.0F, 50,
+        Producto p4 = new Producto("SET DE MANCUERNAS", "Mancuernas", 40.0F, 50,
                 "Set de mancuernas roscadas de 20KG",
                 "https://contents.mediadecathlon.com/p1183101/k$28bf0f41482fecbf3eb6a50bb405059a/sq/Kit+mancuernas+musculaci+n+20+kg+de+rosca.jpg");
         
-        Producto p5 = new Producto("Muñequera", "Material Crossfit", 5.0F, 5,
+        Producto p5 = new Producto("MUÑEQUERA", "Material Crossfit", 5.0F, 5,
                 "Muñequeras capaces de mantener rigidez en la muñeca para ejercicios de pino o barra",
                 "https://contents.mediadecathlon.com/p1748366/k$2313dfd5c5758634ef14b43b1f2fa52b/sq/MU+EQUERAS+MUSCULACI+N+CROSSTRAINING+AZUL.jpg");
         
+        Producto p6 = new Producto("BARRA DE TRACCIÓN CROSS ", "Material Crossfit", 50.0F, 4,
+                "Se fija en la pared y permite practicar las tracciones utilizando varios agarres.",
+                "https://contents.mediadecathlon.com/p1134412/k$a7f08ac52151c148b9158f09396e9968/sq/barra-de-traccion-cross-training-musculacion-pull-up-bar-900.jpg");
+       
+        Producto p7 = new Producto("AGARRADERAS PARA FLEXIONES 4 EN 1 REFUERZO MUSCULAR", "Material Crossfit", 13.0F, 5,
+                "Agarraderas para poder ir aumentando la dificultad de los ejercicios y trabajar todo el cuerpo.",
+                "https://contents.mediadecathlon.com/p1913686/k$465992033b03aaff648093fd4bf6dcc3/sq/agarraderas-para-flexiones-4-en-1-refuerzo-muscular.jpg");
+      
+        Producto p8 = new Producto("JUMP BOX CAJON PLIOMÉTRICO CROSS TRAINING MUSCULACIÓN MADERA", "Material Crossfit", 45.0F, 10,
+                "Cajón de madera para realizar el trabajo de pliometría durante los WODs de crosstraining. Un uso regular te permitirá mejorar fácilmente los estiramientos y la condición física.",
+                "https://contents.mediadecathlon.com/p1334431/k$642faf379181d25eba9cde603e5f9840/sq/jump-box-cajon-pliometrico-cross-training-musculacion-madera.jpg");
         
+        Producto p9 = new Producto("BANDA ELÁSTICA CROSS-TRAINING MUSCULACIÓN - TRAINING BAND 45 KG", "Material Crossfit", 14.99F, 5,
+                "El Training Band permite a la vez tonificar, asistirte durante las sesiones y estirar. Este accesorio polivalente será tu mejor aliado durante las sesiones.",
+                "https://contents.mediadecathlon.com/p1834326/k$55eb976ad3c473afb210136402a1be08/sq/banda-elastica-cross-training-musculacion-training-band-45-kg.jpg");
+        
+        Producto p10 = new Producto("MAGNESIO LÍQUIDO DE ESCALADA SOFT GRIP", "Material Crossfit", 5.0F, 5,
+                "Con poco porcentaje de alcohol (30%) para cuidar la piel de las manos, seca menos las manos después de su uso. Se puede utilizar como complemento del magnesio en polvo.",
+                "https://contents.mediadecathlon.com/p1235916/k$0efe57953a4647a45b7001f524d01624/sq/magnesio-liquido-de-escalada-soft-grip.jpg");
 
         
         productoRepository.save(p1);
@@ -84,6 +102,11 @@ public class DatabaseUsage implements CommandLineRunner {
         productoRepository.save(p3);
         productoRepository.save(p4);
         productoRepository.save(p5);
+        productoRepository.save(p6);
+        productoRepository.save(p7);
+        productoRepository.save(p8);
+        productoRepository.save(p9);
+        productoRepository.save(p10);
        
 
 
@@ -123,8 +146,16 @@ public class DatabaseUsage implements CommandLineRunner {
 
         Promocion pr1 = new Promocion(30);
         pr1.setProducto(p3);
+        
+        Promocion pr2 = new Promocion(20);
+        pr2.setProducto(p1);
+        
+        Promocion pr3 = new Promocion(15);
+        pr3.setProducto(p5);
 
         promocionRepository.save(pr1);
+        promocionRepository.save(pr2);
+        promocionRepository.save(pr3);
         
     	} catch (DataIntegrityViolationException ex) {}
 
