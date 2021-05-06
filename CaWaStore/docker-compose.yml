@@ -1,0 +1,31 @@
+version: '3.7'
+
+services:
+  mysql:
+    container_name: mysql
+    image: mysql:8.0.19
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: 'administrador'
+      MYSQL_DATABASE: 'cawastore'
+      MYSQL_USER: 'admin'
+      MYSQL_PASSWORD: 'administrador'
+    ports:
+      - 3307:3306
+    volumes:
+      - ./volumes/mysql:/var/lib/mysql
+    restart: 'no'
+
+  redis:
+    container_name: redis
+    image: 'redis:latest'
+    command: redis-server --requirepass administrador
+    ports:
+      - '6377:6379'
+
+  cawastore:
+    container_name: cawastore
+    image: 'gonpg/cawastore-web:3'
+    depends_on:
+      - mysql
+      - redis
