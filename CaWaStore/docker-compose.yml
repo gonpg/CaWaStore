@@ -11,7 +11,7 @@ services:
       MYSQL_USER: 'admin'
       MYSQL_PASSWORD: 'administrador'
     ports:
-      - 3307:3306
+      - 3306:3306
     volumes:
       - ./volumes/mysql:/var/lib/mysql
     restart: 'no'
@@ -21,13 +21,34 @@ services:
     image: 'redis:latest'
     command: redis-server --requirepass administrador
     ports:
-      - '6377:6379'
+      - '6379:6379'
 
-  cawastore:
-    container_name: cawastore
-    image: 'gonpg/cawastore-web:3'
-    ports:
-      - 8443:8443
-    depends_on:
-      - mysql
-      - redis
+  haproxy-web:
+     container_name: haproxy-web
+     image: 'haproxy:2.1'
+     ports:
+       - '81:80'
+       - '443:443'
+       - '8404:8404'
+     volumes:
+       - ./volumes/haproxy-web:/usr/local/etc/haproxy:ro
+     depends_on:
+       - cawastore-web-1
+       - cawastore-web-2
+
+  cawastore-web-1:
+     container_name: cawastore-web-1
+     # build:
+       # context: .
+       # dockerfile: Dockerfile
+     image: 'gonpg/cawastore-web:3'
+     depends_on:
+       - mysql
+       - redis
+
+  cawastore-web-2:
+     container_name: cawastore-web-2
+     image: 'gonpg/cawastore-web:3'
+     depends_on:
+       - mysql
+       - redis
