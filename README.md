@@ -47,42 +47,44 @@ Verde- Controladores//
 Azul- Templates.
 
 ## Capturas de pantalla de la web
+
+###Tienda
+
 ![](Documentos/Tienda.png)
 
-Tienda
+###Login
 
 ![](Documentos/Login.png)
 
-Login
+###Perfil del usuario
 
 ![](Documentos/Perfilusuario.png)
 
-Perfil del usuario
+###Registro
 
 ![](Documentos/Registro.png)
 ![](Documentos/Registrocompleto.png)
 
-Registro
+###Crear producto
 
 ![](Documentos/Añadirproducto.png)
 
-Crear producto
+###Detalle de producto
 
 ![](Documentos/Detallesdeproducto.png)
 
-Detalle de producto
+###Producto eliminado
 
 ![](Documentos/Productoeliminado.png)
 
-Producto eliminado
+###Realizar pedido
 
 ![](Documentos/Realizarpedido.png)
 
-Realizar pedio
+###Reseña
 
 ![](Documentos/Reseñaañadida.png)
 
-Reseña
 
 ## Diagrama de navegación:
 ![](Documentos/navegación.PNG)
