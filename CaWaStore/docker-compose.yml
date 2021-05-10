@@ -14,7 +14,40 @@ services:
       - 3306:3306
     volumes:
       - ./volumes/mysql:/var/lib/mysql
+      - ./volumes/mysql-master/conf.d:/etc/mysql/conf.d
     restart: 'no'
+
+  mysql-slave-1:
+     container_name: mysql-slave-1
+     image: mysql:8.0.19
+     command: --default-authentication-plugin=mysql_native_password
+     environment:
+       MYSQL_ROOT_PASSWORD: 'administrador'
+       MYSQL_DATABASE: 'cawastore'
+       MYSQL_USER: 'admin'
+       MYSQL_PASSWORD: 'administrador'
+     ports:
+       - 3307:3306
+     volumes:
+       - ./volumes/mysql-slave-1/data:/var/lib/mysql
+       - ./volumes/mysql-slave-1/conf.d:/etc/mysql/conf.d
+     restart: 'no'
+
+  mysql-slave-2:
+     container_name: mysql-slave-2
+     image: mysql:8.0.19
+     command: --default-authentication-plugin=mysql_native_password
+     environment:
+       MYSQL_ROOT_PASSWORD: 'administrador'
+       MYSQL_DATABASE: 'cawastore'
+       MYSQL_USER: 'admin'
+       MYSQL_PASSWORD: 'administrador'
+     ports:
+       - 3308:3306
+     volumes:
+       - ./volumes/mysql-slave-2/data:/var/lib/mysql
+       - ./volumes/mysql-slave-2/conf.d:/etc/mysql/conf.d
+     restart: 'no'
 
   redis:
     container_name: redis
@@ -22,34 +55,53 @@ services:
     command: redis-server --requirepass administrador
     ports:
       - '6379:6379'
-
   
   haproxy-web:
-     container_name: haproxy-web
-     image: 'haproxy:2.1'
-     ports:
-       - '81:80'
-       - '443:443'
-       - '8404:8404'
-     volumes:
-       - ./volumes/haproxy-web:/usr/local/etc/haproxy:ro
-     depends_on:
-       - cawastore-web-1
-       - cawastore-web-2
-
+    container_name: haproxy-web
+    image: 'haproxy:2.1'
+    ports:
+      - '80:80'
+      - '443:443'
+      - '8404:8404'
+    volumes:
+      - ./volumes/haproxy-web:/usr/local/etc/haproxy:ro
+    depends_on:
+      - cawastore-web-1
+      - cawastore-web-2
+  
   cawastore-web-1:
-     container_name: cawastore-web-1
-     # build:
-       # context: .
-       # dockerfile: Dockerfile
-     image: 'gonpg/cawastore-web:2'
-     depends_on:
-       - mysql
+    container_name: cawastore-web-1 
+    image: 'gonpg/cawastore-web:2'
+    depends_on:
+       - mysql-master
        - redis
 
   cawastore-web-2:
      container_name: cawastore-web-2
-     image: 'gonpg/cawastore-web:2'
+     image: 'buyify/buyify-web:2'
      depends_on:
-       - mysql
+       - mysql-master
        - redis
+
+  haproxy-rest:
+    container_name: haproxy-rest
+    image: 'haproxy:2.1'
+    ports:
+      - '8405:8404'
+    volumes:
+      - ./volumes/haproxy-rest:/usr/local/etc/haproxy:ro
+    depends_on:
+      - cawastore-rest-1
+      - cawastore-rest-2
+ 
+  cawastore-rest-1:
+     container_name: cawastore-rest-1
+     image: 'gonpg/cawastore-rest:2'
+     depends_on:
+       - mysql-master
+
+  cawastore-rest-2:
+     container_name: cawastore-rest-2
+     image: 'cawastore/cawastore-rest:2'
+     depends_on:
+       - mysql-master
