@@ -118,13 +118,15 @@ $ java -jar CaWaStore-Rest-0.0.1-SNAPSHOT.jar (Situar previamente el jar en el d
 ```
 
 ## Fase 4
-componentes dockerizados en esta fase y definidos en el docker-compose:
+Componentes dockerizados en esta fase y definidos en el docker-compose: (https://github.com/gonpg/CaWaStore/blob/main/CaWaStore/docker-compose.yml)
 
-- una instancia redis para la caché de datos
-- dos instancias de balanceadores de carga haproxy, uno para la web y otro para el servicio interno
-- dos instancias de la web
-- dos instancias del servicio interno
-- tres instancias de la base de datos con un master y dos exclavos (slaves)
+- Una instancia redis para la caché de datos
+- Dos instancias de balanceadores de carga haproxy, uno para la web y otro para el servicio interno
+- Dos instancias de la web
+- Dos instancias del servicio interno
+- Tres instancias de la base de datos con un master y dos exclavos (slaves)
+
+Los archivos de configuración son los siguientes: https://github.com/gonpg/CaWaStore/tree/main/CaWaStore/volumes
 
 ------X------X-------
 
