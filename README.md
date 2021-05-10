@@ -54,6 +54,7 @@ Azul- Templates.
 
 ###Login
 
+![](Documentos/login2.png)
 ![](Documentos/Login.png)
 
 ###Perfil del usuario
