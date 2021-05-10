@@ -55,7 +55,6 @@ Azul- Templates.
 ###Login
 
 ![](Documentos/login2.png)
-![](Documentos/Login.png)
 
 ###Perfil del usuario
 
@@ -117,6 +116,16 @@ $ mysql> GRANT ALL ON cawastore.* to 'admin'@'localhost';
 $ java -jar CaWaStore-0.0.1-SNAPSHOT.jar (Situar previamente el jar en el directorio HOME o hacer cd al directorio donde se encuentra)
 $ java -jar CaWaStore-Rest-0.0.1-SNAPSHOT.jar (Situar previamente el jar en el directorio HOME o hacer cd al directorio donde se encuentra)
 ```
+
+## Fase 4
+componentes dockerizados en esta fase y definidos en el docker-compose:
+
+- una instancia redis para la caché de datos
+- dos instancias de balanceadores de carga haproxy, uno para la web y otro para el servicio interno
+- dos instancias de la web
+- dos instancias del servicio interno
+- tres instancias de la base de datos con un master y dos exclavos (slaves)
+
 ------X------X-------
 
 ## Componentes del grupo: 
