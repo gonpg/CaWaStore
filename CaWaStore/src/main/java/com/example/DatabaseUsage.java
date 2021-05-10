@@ -43,11 +43,11 @@ public class DatabaseUsage implements CommandLineRunner {
 
     @Override
     public void run(String... args){
- /*   	try {
-        Usuario u1 = new Usuario("joseAngel", "gonzalo.perez.1f@gmail.com", "12345678" , "USER");
+   /* 	try {
+    	Usuario u1 = new Usuario("joseAngel", "gonzalos.perez.1f@gmail.com", "12345678" , "USER");
         Usuario u2 = new Usuario("gonzalo", "gonzalo.perez.1f@gmail.com", "12345678", "USER");
-        Usuario u3 = new Usuario("paco", "gonzalo.perez.1f@gmail.com", "12345678", "USER");
-        Usuario administrador = new Usuario("admin", "gonzalo.perez.1f@gmail.com", "1234", "USER", "ADMIN");
+        Usuario u3 = new Usuario("paco", "gonzaloss.perez.1f@gmail.com", "12345678", "USER");
+        Usuario administrador = new Usuario("admin", "gonzalosss.perez.1f@gmail.com", "1234", "USER", "ADMIN");
        
 
         usuarioRepository.save(u1);
@@ -158,7 +158,7 @@ public class DatabaseUsage implements CommandLineRunner {
         promocionRepository.save(pr3);
         
     	} catch (DataIntegrityViolationException ex) {}
-*/
+      */
     }
 
 
