@@ -39,7 +39,7 @@ public class UsuarioController implements Serializable {
         model.addAttribute("nombreUsuario", user.getNombreUsuario());
 
         RestTemplate restTemplate = new RestTemplate();
-        restTemplate.exchange("http://localhost:8080/mail/" + user.getId(), HttpMethod.GET, null, Void.class);	
+        restTemplate.exchange("http://haproxy-rest/mail/" + user.getId(), HttpMethod.GET, null, Void.class);	
         
         return "registrado";
     }

@@ -23,6 +23,7 @@ services:
     ports:
       - '6379:6379'
 
+  
   haproxy-web:
      container_name: haproxy-web
      image: 'haproxy:2.1'
@@ -41,14 +42,14 @@ services:
      # build:
        # context: .
        # dockerfile: Dockerfile
-     image: 'gonpg/cawastore-web:3'
+     image: 'gonpg/cawastore-web:2'
      depends_on:
        - mysql
        - redis
 
   cawastore-web-2:
      container_name: cawastore-web-2
-     image: 'gonpg/cawastore-web:3'
+     image: 'gonpg/cawastore-web:2'
      depends_on:
        - mysql
        - redis
